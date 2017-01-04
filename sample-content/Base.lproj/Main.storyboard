@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -210,7 +209,7 @@
                                 <rect key="frame" x="47.5" y="208.5" width="280" height="250"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loE-VB-JIe">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="55"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="76.5"/>
                                         <color key="backgroundColor" red="0.24313725489999999" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -219,18 +218,8 @@
                                             <action selector="recordTapped:" destination="RJM-TI-PhS" eventType="touchUpInside" id="wz8-aS-zje"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8y-LU-cRk">
-                                        <rect key="frame" x="0.0" y="65" width="280" height="55"/>
-                                        <color key="backgroundColor" red="0.24313725489999999" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Stop"/>
-                                        <connections>
-                                            <action selector="stopTapped:" destination="RJM-TI-PhS" eventType="touchUpInside" id="HhR-AJ-f5h"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUa-ci-fin">
-                                        <rect key="frame" x="0.0" y="130" width="280" height="55"/>
+                                        <rect key="frame" x="0.0" y="86.5" width="280" height="77"/>
                                         <color key="backgroundColor" red="0.24313725489999999" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -240,7 +229,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzA-Ol-H5J">
-                                        <rect key="frame" x="0.0" y="195" width="280" height="55"/>
+                                        <rect key="frame" x="0.0" y="173.5" width="280" height="76.5"/>
                                         <color key="backgroundColor" red="0.24313725489999999" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -270,7 +259,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akU-Y2-cgl">
-                                    <rect key="frame" x="98.5" y="6" width="46" height="21"/>
+                                    <rect key="frame" x="99" y="6" width="46" height="21"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -287,7 +276,6 @@
                         <outlet property="btnPlay" destination="uUa-ci-fin" id="2wr-Do-sd9"/>
                         <outlet property="btnRecord" destination="loE-VB-JIe" id="jyR-jp-tLh"/>
                         <outlet property="btnSave" destination="uzA-Ol-H5J" id="IHq-Dk-nqd"/>
-                        <outlet property="btnStop" destination="z8y-LU-cRk" id="kMM-WF-83a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPd-we-bRq" userLabel="First Responder" sceneMemberID="firstResponder"/>

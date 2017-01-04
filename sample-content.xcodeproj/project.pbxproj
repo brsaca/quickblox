@@ -35,6 +35,7 @@
 		BF7ECD5A1B26E71B0005B39D /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7ECD591B26E71B0005B39D /* libxml2.2.dylib */; };
 		C4789E571E1C395F00E08933 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4789E561E1C395F00E08933 /* AudioViewController.m */; };
 		C4789E591E1C459D00E08933 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4789E581E1C459D00E08933 /* AVKit.framework */; };
+		C4789E5E1E1C686C00E08933 /* WCSAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4789E5D1E1C686C00E08933 /* WCSAlertController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,6 +91,8 @@
 		C4789E551E1C395F00E08933 /* AudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
 		C4789E561E1C395F00E08933 /* AudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
 		C4789E581E1C459D00E08933 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		C4789E5C1E1C686C00E08933 /* WCSAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCSAlertController.h; sourceTree = "<group>"; };
+		C4789E5D1E1C686C00E08933 /* WCSAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCSAlertController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,14 +157,8 @@
 			children = (
 				BF7ECD0E1B26D8770005B39D /* AppDelegate.h */,
 				BF7ECD0F1B26D8770005B39D /* AppDelegate.m */,
-				BF7ECD111B26D8770005B39D /* MainViewController.h */,
-				BF7ECD121B26D8770005B39D /* MainViewController.m */,
-				BF7ECD301B26DE890005B39D /* ImageViewController.h */,
-				BF7ECD311B26DE890005B39D /* ImageViewController.m */,
-				860B9F441B9A0B0100BDB01E /* ImageCollectionViewCell.h */,
-				860B9F451B9A0B0100BDB01E /* ImageCollectionViewCell.m */,
-				C4789E551E1C395F00E08933 /* AudioViewController.h */,
-				C4789E561E1C395F00E08933 /* AudioViewController.m */,
+				C4789E5A1E1C684C00E08933 /* Controller */,
+				C4789E5B1E1C685200E08933 /* View */,
 				BF7ECD141B26D8770005B39D /* Main.storyboard */,
 				BF7ECD171B26D8770005B39D /* Images.xcassets */,
 				BF7ECD191B26D8770005B39D /* LaunchScreen.xib */,
@@ -219,6 +216,30 @@
 				63EF6A11FDEEA897B051BF7F /* libPods-sample-content.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4789E5A1E1C684C00E08933 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF7ECD111B26D8770005B39D /* MainViewController.h */,
+				BF7ECD121B26D8770005B39D /* MainViewController.m */,
+				BF7ECD301B26DE890005B39D /* ImageViewController.h */,
+				BF7ECD311B26DE890005B39D /* ImageViewController.m */,
+				C4789E551E1C395F00E08933 /* AudioViewController.h */,
+				C4789E561E1C395F00E08933 /* AudioViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C4789E5B1E1C685200E08933 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				860B9F441B9A0B0100BDB01E /* ImageCollectionViewCell.h */,
+				860B9F451B9A0B0100BDB01E /* ImageCollectionViewCell.m */,
+				C4789E5C1E1C686C00E08933 /* WCSAlertController.h */,
+				C4789E5D1E1C686C00E08933 /* WCSAlertController.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +346,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9711057DA5E195E961E1022B /* [CP] Embed Pods Frameworks */ = {
@@ -353,6 +374,7 @@
 				BF7ECD321B26DE890005B39D /* ImageViewController.m in Sources */,
 				BF7ECD131B26D8770005B39D /* MainViewController.m in Sources */,
 				BF7ECD101B26D8770005B39D /* AppDelegate.m in Sources */,
+				C4789E5E1E1C686C00E08933 /* WCSAlertController.m in Sources */,
 				860B9F461B9A0B0100BDB01E /* ImageCollectionViewCell.m in Sources */,
 				BF7ECD0D1B26D8770005B39D /* main.m in Sources */,
 				C4789E571E1C395F00E08933 /* AudioViewController.m in Sources */,

@@ -20,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.btnPlay setEnabled:NO];
-    [self.btnStop setEnabled:NO];
     [self.btnSave setEnabled:NO];
     
     path = [NSArray arrayWithObjects:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject], @"recording.m4a",nil];
@@ -44,36 +43,28 @@
 #pragma mark - IBAction
 
 - (IBAction)recordTapped:(id)sender {
-    // Stop the audio player before recording
-    if (player.playing) {
-        [player stop];
-    }
+    
+    AVAudioSession *session = [AVAudioSession sharedInstance];
     
     if (!recorder.recording) {
-        AVAudioSession *session = [AVAudioSession sharedInstance];
         [session setActive:YES error:nil];
         
         // Start recording
         [recorder record];
-        [self.btnRecord setTitle:@"Pause" forState:UIControlStateNormal];
-        
+        [self.btnRecord setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.btnPlay setEnabled:NO];
     } else {
         
-        // Pause recording
-        [recorder pause];
+        // Stop recording
+        [recorder stop];
+        
+        [session setActive:NO error:nil];
+        
         [self.btnRecord setTitle:@"Record" forState:UIControlStateNormal];
+        [self.btnPlay setEnabled:YES];
+        [self.btnSave setEnabled:YES];
     }
     
-    [self.btnStop setEnabled:YES];
-    [self.btnPlay setEnabled:NO];
-    
-}
-
-- (IBAction)stopTapped:(id)sender {
-    [recorder stop];
-    
-    AVAudioSession *session = [[AVAudioSession alloc]init];
-    [session setActive:NO error:nil];
 }
 
 - (IBAction)playTapped:(id)sender {
@@ -114,7 +105,6 @@
 
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
     [self.btnRecord setTitle:@"Record" forState:UIControlStateNormal];
-    [self.btnStop setEnabled:NO];
     [self.btnPlay setEnabled:YES];
     [self.btnSave setEnabled:YES];
 }

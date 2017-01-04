@@ -20,12 +20,10 @@
     AVAudioPlayer *player;
 }
 @property (nonatomic, weak) id <AudioViewControllerDelegate> delegate;
-@property (nonatomic, weak) IBOutlet UIButton *btnSave;
 @property (nonatomic, weak) IBOutlet UIButton *btnRecord;
-@property (nonatomic, weak) IBOutlet UIButton *btnStop;
 @property (nonatomic, weak) IBOutlet UIButton *btnPlay;
+@property (nonatomic, weak) IBOutlet UIButton *btnSave;
 - (IBAction)recordTapped:(id)sender;
-- (IBAction)stopTapped:(id)sender;
 - (IBAction)playTapped:(id)sender;
 - (IBAction)saveTapped:(id)sender;
 

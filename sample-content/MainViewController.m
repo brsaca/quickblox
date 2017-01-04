@@ -15,6 +15,7 @@
 
 #import "AudioViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "WCSAlertController.h"
 
 static NSString* const kImageCellIdentifier = @"ImageCollectionViewCellIdentifier";
 
